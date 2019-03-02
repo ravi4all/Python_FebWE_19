@@ -26,7 +26,13 @@ while chat:
         path = easygui.fileopenbox()
         os.startfile(path)
     elif msg == 'show songs':
-        pass
+        path = 'C:/Users/asus/Music'
+        os.chdir(path)
+        songs = os.listdir()
+        for index,songName in enumerate(songs, start=1):
+            print(index, songName)
+        songNumber = int(input("Enter number of song you want to play : "))
+        os.startfile(songs[songNumber - 1])
     elif msg == 'bye':
         print('Bye User')
         chat = False
